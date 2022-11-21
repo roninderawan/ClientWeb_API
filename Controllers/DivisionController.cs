@@ -22,5 +22,10 @@ namespace ClientWeb_API.Controllers
         {
             return View();
         }
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }

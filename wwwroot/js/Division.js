@@ -33,22 +33,46 @@
                         </button>`;
             }
         },
+
     ],
+    dom: 'Bfrtip',
+    buttons: [
+        'colvis',
+        'excel',
+        'print']
 });
 
 
-function createDivision() {
-    const newName = $("#newDivisions").val();
+function newDivisions() {
+    let data;
+    let Id = 0;
+    let Name = $('#DivisionName').val();
+
+    data = {
+        "Id": Id,
+        "Name": Name
+    }
+
+    console.log(data);
 
     $.ajax({
-        url: 'https://localhost:7159/api/Division',
-        method: 'POST',
-        datatype: 'json',
-        Data: {
-            Name: newName
+        url: 'https://localhost:7159/api/Division/',
+        type: "POST",
+        data: JSON.stringify(data),
+        dataType: 'json',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (data) {
+            Swal.fire(
+                'Data Ditambahkan',
+                'You clicked the button!',
+                'success'
+            )
+            location.reload();
         }
-    })
-};
+    });
+}
 
 function detailsDivision(Id) {
     $.ajax({
@@ -67,10 +91,58 @@ function detailsDivision(Id) {
     });
 }
 
+function editDivision(Id) {
+    $.ajax({
+        url: `https://localhost:7159/api/Division/Id?Id=${Id}`,
+        type: "GET"
+    }).done((res) => {
+        let temp = "";
+        temp += `<input type="hidden" class="form-control" id="hidenId" readonly placeholder="" value="0">
+                <p> Id: <input type="text" class="form-control" id="Id"  readonly placeholder="${res.Data.Id}" value="${res.Data.Id}">
+                <p> Name: <input type="text" class="form-control" id="DivName" placeholder="${res.Data.Name}" value="${res.Data.Name}">
+                `;
+        $("#edit").html(temp);
+        console.log(res);
+    }).fail((err) => {
+        console.log(err);
+    });
+}
+
+function updateDivisions() {
+    let data;
+    let Id = parseInt($('#Id').val());
+    let Name = $('#DivName').val()
+
+    data = {
+        "Id": Id,
+        "Name": Name
+    }
+
+    console.log(data);
+
+    $.ajax({
+        url: 'https://localhost:7159/api/Division/',
+        type: "PUT",
+        data: JSON.stringify(data),
+        dataType: 'json',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (data) {
+            Swal.fire(
+                'Data Diupdate',
+                'You clicked the button!',
+                'success'
+            )
+            location.reload();
+        }
+    });
+}
+
 function deleteDivision(Id) {
     $.ajax({
         url: `https://localhost:7159/api/Division/Id?Id=${Id}`,
-        method: 'DELETE',
+        method: "DELETE",
         dataType: 'json',
         success: function (message) {
             alert("Data Deleted" + message);
