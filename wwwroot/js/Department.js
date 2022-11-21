@@ -1,4 +1,5 @@
-﻿$("#data-departments").DataTable({
+﻿$(document).ready(function () {
+$("#data-departments").DataTable({
     ajax: {
 
         url: "https://localhost:7159/api/Department",
@@ -37,6 +38,15 @@
             }
         },
     ],
+    dom: 'Bfrtip',
+    buttons: [
+        'colvis',
+        'excel',
+        'print',
+        'pdf'
+    ]
+});
+
 });
 
 function newDepartments() {

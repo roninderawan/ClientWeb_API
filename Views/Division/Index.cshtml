@@ -38,7 +38,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                <p> Name : </p> <input type="text" class="form-control" id="DivisionName" />
+                <p> Name : </p> <input type="text" class="form-control" id="DivisionName" minlength="2" required/>
             </div>
             <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -101,3 +101,6 @@
   </div>
 </div>
 <script src="~/js/Division.js"></script>
+<script>
+$("#data-divisions").validate();
+</script>

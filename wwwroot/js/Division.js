@@ -1,45 +1,49 @@
-﻿$("#data-divisions").DataTable({
-    ajax: {
-        
-        url: "https://localhost:7159/api/Division",
-        dataSrc: "Data",
-    },
-    
-    columns: [
-        {
-            data: null,
-            render: function (data, type, row, meta) {
-                return meta.row + meta.settings._iDisplayStart + 1;
-            },
-        },
-        {
-            data:"Id",
+﻿$(document).ready(function () {
+    $("#data-divisions").DataTable({
+        ajax: {
 
+            url: "https://localhost:7159/api/Division/",
+            dataSrc: "Data",
         },
-        {
-            data:"Name",
-        },
-        {
-            data: null,
-            render: function (data, type, row, meta) {
-                return `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="detailsDivision('${data.Id}')">
+
+        columns: [
+            {
+                data: null,
+                render: function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                },
+            },
+            {
+                data: "Id",
+
+            },
+            {
+                data: "Name",
+            },
+            {
+                data: null,
+                render: function (data, type, row, meta) {
+                    return `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="detailsDivision('${data.id}')">
                          Details
                         </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editDivision('${data.Id}')">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editDivision('${data.id}')">
                          Edit
                         </button>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="deleteDivision('${data.Id}')">
+                        <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="deleteModal" onclick="deleteDivision('${data.id}')">
                          Delete
-                        </button>`;
-            }
-        },
+                        </button> `
+                }
+            },
+        ],
+        dom: 'Bfrtip',
+        buttons: [
+            'colvis',
+            'excel',
+            'print',
+            'pdf'
+        ]
+    });
 
-    ],
-    dom: 'Bfrtip',
-    buttons: [
-        'colvis',
-        'excel',
-        'print']
 });
 
 
