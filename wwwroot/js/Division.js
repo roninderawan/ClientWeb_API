@@ -2,7 +2,7 @@
     $("#data-divisions").DataTable({
         ajax: {
 
-            url: "https://localhost:7159/api/Division/",
+            url: "https://localhost:7159/api/Division",
             dataSrc: "Data",
         },
 
@@ -23,15 +23,15 @@
             {
                 data: null,
                 render: function (data, type, row, meta) {
-                    return `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal" onclick="detailsDivision('${data.id}')">
+                    return `<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detailModal" onclick="detailsDivision('${data.Id}')">
                          Details
                         </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editDivision('${data.id}')">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" onclick="editDivision('${data.Id}')">
                          Edit
                         </button>
-                        <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="deleteModal" onclick="deleteDivision('${data.id}')">
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="deleteDivision('${data.Id}')">
                          Delete
-                        </button> `
+                        </button>`;
                 }
             },
         ],
@@ -45,7 +45,6 @@
     });
 
 });
-
 
 function newDivisions() {
     let data;
@@ -115,11 +114,11 @@ function editDivision(Id) {
 function updateDivisions() {
     let data;
     let Id = parseInt($('#Id').val());
-    let Name = $('#DivName').val()
+    let Name = $('#DivName').val();
 
     data = {
         "Id": Id,
-        "Name": Name
+        "Name": Name,
     }
 
     console.log(data);
@@ -154,5 +153,4 @@ function deleteDivision(Id) {
         }
     })
 }
-
 

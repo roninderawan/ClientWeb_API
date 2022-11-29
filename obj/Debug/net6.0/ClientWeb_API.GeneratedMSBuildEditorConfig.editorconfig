@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\MCC\ClientWeb_API
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/MCC/ClientWeb_API/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MCC/ClientWeb_API/Views/Account/sign-up.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxzaWduLXVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/MCC/ClientWeb_API/Views/Department/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +45,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/MCC/ClientWeb_API/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MCC/ClientWeb_API/Views/Shared/_SignInLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWduSW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/MCC/ClientWeb_API/Views/Shared/_ValidationScriptsPartial.cshtml]

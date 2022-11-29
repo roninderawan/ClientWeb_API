@@ -39,8 +39,26 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-                <p> Name : </p> <input type="text" class="form-control" id="DepartmentName" />
-                <p> DivisionID : </p> <input type="text" class="form-control" id="DivisionID" />
+                @*<p> Name : </p> <input type="text" class="form-control" id="DepartmentName" />
+                <p> DivisionID : </p> <input type="text" class="form-control" id="DivisionID" />*@
+
+                 <form class="was-validated">
+                   <div class="mb-3">
+                    <label for="validationTextarea" class="form-label">Name:</label>
+                        <input class="form-control" id="DepartmentName" placeholder="Required example textarea" required></input>
+                    <div class="invalid-feedback">
+                      Please enter a Department
+                    </div>
+                    </div>
+                     <div class="mb-3">
+                    <label for="validationTextarea" class="form-label">DivisionID:</label>
+                        <input class="form-control" id="DivisionID" placeholder="Required example textarea" required></input>
+                    <div class="invalid-feedback">
+                      Please enter a DivisionID
+                    </div>
+                    </div>
+
+              </form>
             </div>
             <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

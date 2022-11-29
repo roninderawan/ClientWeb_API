@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="~/lib/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="~/lib/assets/img/favicon.png">
     <title>
-        @ViewData["Title"] - Client
+        @ViewData["Title"] - WEB Client_API
     </title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
@@ -27,6 +27,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="~/lib/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/datatables.min.css"/>
+    <script src="jquery.validate.js"></script>
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
@@ -42,6 +43,15 @@
         <hr class="horizontal dark mt-0">
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
             <ul class="navbar-nav">
+                 <li class="nav-item">
+                    <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">
+
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" asp-area="" asp-controller="Division" asp-action="Index">
 
@@ -73,7 +83,7 @@
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
                         <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
                     </ol>
-                    <h6 class="font-weight-bolder text-white mb-0">Division</h6>
+                    <h6 class="font-weight-bolder text-white mb-0">MCC71</h6>
                 </nav>
                
                 </div>
@@ -83,7 +93,7 @@
         <div class="container-fluid py-4">
 
             <!-- Dsini -->
-            @RenderBody();
+            @RenderBody()
             
 
             <footer class="footer pt-3  ">
@@ -118,7 +128,10 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-colvis-2.3.3/b-html5-2.3.3/datatables.min.js"></script>
-
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="~/js/site.js"></script>
 </body>
 
 </html>
